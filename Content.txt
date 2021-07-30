@@ -1,0 +1,47 @@
+====CONFIG USERNAME VÀ EMAIL====
+git config --global user.email "thovanhien@gmail.com"
+git config --global user.name "HienTho"
+
+====LOG/SHOW/DIFF====
+=> Sau khi git log:
++ Dòng 1 tên nhãn mà git đặt (HEAD-> master) 
++ Tác giả
++ Date
++ Message.
+
+=>Sau khi git show:
++ Trả về commit gần nhất NẾU KHÔNG TRUYỀN NHÃN
++ Trả về commit mà nó trỏ tới NẾU TRUYỀN NHÃN
+(Có cả nội dung ++ -- thay đổi)
+
+=>Sau khi git diff:
++ Hiển thị nội dung thay đổi của file nếu file đó CHƯA ĐƯỢC COMMIT LẦN NỮA.
+
+====WORKING DIRECTORY/STAGING AREA/GIT REPOSITORY====
++ Working directory : Những file đã add và đã change(nằm ở giữa unmodified->modified)
++ Staging area : Những file đã được add(th1 : add thẳng, th2: change xong add)
++ Git repository: Sau khi git commit được thực hiện thì sẽ đưa từ Stagin-> repo
+(gitk để xem commit hay còn gọi là xem repo)
+
+====CHECKOUT/RESET====
++ git checkout --tenfile : xoá bỏ các thay đổi khi chưa lên staging(tức là nằm ở working directory). Đưa file về commit trước đó.
++ git reset HEAD tenfile : đưa file từ trạng thái staging area -> working directory
++ git reset --soft mã sah1id : xoá commit hiện tại. Nhảy về commit có mã sah1id.Đang ở trạng thái chưa commit(chứa tất cả file).
++ git reset --mix mã sah1id  : xoá commit hiện tại. Nhảy về commit có mã sah1id. Đang ở trạng thái chưa add(chứa tất cả file chưa add) .
++ git reset --hard mã sah1id : xoá commit hiện tại. Nhảy về commit có mã sah1id. Đang ở trạng thái sạch sẽ. 
++ git revert mã sah1id : Tạo ra 1 commit và đảo ngược commit bạn muốn revert(+ thành - của file).
+
+
+====BRANCHING/MERGING====
++ git checkout -b tenbranch : tạo mới branch và chuyển sang branch mới.
+(Thật chất git commit đưa lên git repo nhưng thuộc nhánh nào).
++ git merge a : kéo những thay đổi từ brand a(đang đứng) <- b.
++ gid branch -D tenbranch : xoá nhánh.
+
+====.gitignore====
++B1: tạo file .gitignore
++B2: thêm module không cần up lên
+
+
+
+

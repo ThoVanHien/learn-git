@@ -50,7 +50,34 @@ B1: Người A(chủ branch) tạo 1 branch mới trên local và code trên bra
 B2: Đẩy lên github từ branch đó với lệnh git push origin <nhánh đó>
 B3: Trên github, tab branch, từ branch vừa push, chọn create pull request.
 B4: Bên B vào github, vào tab Pull Request,File change,Review change(comment,approve,request changes),finish review.
-B5: Nếu B cmt thì A sửa, sửa xong push<branch> lên.
+B5: Nếu B cmt thì A sửa, sửa xong push<branch> lên. Xong vào tab conversation chọn merge pull request.
+(Merge pull request cũng là 1 commit).
+
+====REVIEW LOCAL====
+B4: git fetch origin <ten branch> 
+(tuy git brach không hiển thị ra nhưng vẫn checkout được)
+B5: git checkout <ten branch>
+(git pull để đồng bộ dữ liệu trên github về nếu A merge thành công).
  
+====Resolve conflict sử dụng rebase====
+B1: A thực hiện nhiệm vụ X trên branchA - B cũng thực hiện nhiệm vụ X trên branchB.
+B2: Bên A push origin <branchA>, tạo pull request.
+B3: Bên B git pull về(lúc này master bên B = A vì chưa merge)
+B4: Bên B code change sau đó push lên origin <branchB>, tạo pull request(nhớ thêm quyền B push-Collaborators).
+B5: Giả dụ B được merge trước. Thì A lỗi do cùng 1 file.
+B6: Bên A đi fix 
+	B6.1: git pull origin master
+	B6.2: checkout qua branch mà bạn muốn rebase. Lúc này branch master có hết code mới rồi.
+	B6.3: git rebase master. Lúc này branchB vẫn cũ + master mới.
+	B6.4: Sửa xong rồi git add, git rebase --continue.
+	B6.5: git push origin <branchA> -f (do nó có rồi và pull request rồi) nên có thêm -f.
+
+====Resolve conflict sử dụng merge====
+B6: Bên A đi fix 
+	B6.1: git checkout master, git pull.
+	B6.2: checkout qua branch bị lỗi <branchA>
+	B6.3: git merge master và fix lỗi.
+	B6.4: git push origin <branchA> 
+
 
 

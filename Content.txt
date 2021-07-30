@@ -42,6 +42,15 @@ git config --global user.name "HienTho"
 +B1: tạo file .gitignore
 +B2: thêm module không cần up lên
 
+====PULL====
+Bên người A thay đổi và push lên. Khi b pull về thì có ở repo
 
+====PUSH A BRANCH====
+B1: Người A(chủ branch) tạo 1 branch mới trên local và code trên branch đó.
+B2: Đẩy lên github từ branch đó với lệnh git push origin <nhánh đó>
+B3: Trên github, tab branch, từ branch vừa push, chọn create pull request.
+B4: Bên B vào github, vào tab Pull Request,File change,Review change(comment,approve,request changes),finish review.
+B5: Nếu B cmt thì A sửa, sửa xong push<branch> lên.
+ 
 
 
